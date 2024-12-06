@@ -47,6 +47,8 @@ webshot(html_file, "table_screenshot.png")
 
 ![](Test_files/figure-gfm/cars-1.png)<!-- -->
 
+![Table Screenshot](table_screenshot.png)
+
 ## Including Plots
 
 You can also embed plots, for example:
