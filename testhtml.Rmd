@@ -1,0 +1,40 @@
+---
+title: "Untitled"
+author: "Noah Parker"
+date: "2024-12-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(knitr)
+library(dplyr)
+library(kableExtra)
+```
+
+## GitHub Documents
+
+This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Including Code
+
+You can include R code in the document as follows:
+
+```{r cars}
+test.table <- read_csv("~/Desktop/test.table.csv")
+print(test.table)
+test.table$Prob_t_15
+kable(test.table, format = "simple", col.names = c("Starting_State", "First_Event", "Distribution", "Parameters_Estimate", "Total_Probability", "Probability_at_t = 15", "Median_Time_To_Event", "25th%_Time", "75th%_Time"), align = "c")  
+
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
