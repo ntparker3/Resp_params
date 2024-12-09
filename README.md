@@ -37,7 +37,7 @@ on the rate of . We provide the rate estimates for *Outpatient or worse*
 and *Inpatient or worse* for referece, though under the expectations
 that the rates don’t differ enough to merit inclusion into most models.
 
-\##Data Use
+##Data Use
 
 > The tables containing the parameterized distributions, probability of
 > occrurance, and time-to-event estimates (examples below) for COVID-19,
@@ -303,7 +303,9 @@ Virtual
 Generalized gamma
 </td>
 <td style="text-align:center;">
-mu = -2.30, sigma = 0.0443, Q = -18.30
+mu = -2.30, 
+    sigma = 0.0443, 
+    Q = -18.30
 </td>
 <td style="text-align:center;">
 0.072 (0.070, 0.073)
