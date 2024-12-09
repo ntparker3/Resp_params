@@ -1,11 +1,60 @@
-Untitled
+Parameterizing healthcare utilization transitions of respiratory
+pathogens using EHR data
 ================
+
+
 
 ## Background and motivation
 
+Knowledge of the transitions between healthcare utilization states, such
+as virtual care, urgent care, or hospitalization, is important for the
+effectiveness of prediction models and public health planning
+strategies. Yet, most of the distributions for such transitions for
+respiratory diseases remain unknown. Using Kaiser Permanente electric
+health records, we parameterized time-to-event transition distributions
+for COVID-19, Influenza, and RSV. This will allow for better informed
+prediction models, as well as enable us to answer questions about how
+people infected with respiratory diseases are moving through the
+healthcare system and who is accessing certain types of care.
+
+## Types of analysis
+
+For all three pathogens, we parameterized two types of transitions — the
+*first event* to occur following a *starting event*, as well as *outcome
+or worse* for each outcome from a *starting event*. The first transition
+type can help answer questions about how people are moving through the
+healthcare cascade (link presentation or video). The outcome or worse)
+transition type can inform prediction and forecast models by answering
+how many people will seek at least a certain level of care in the
+healthcare cascade.
+
+The *outcome or worse* analysis was further parameterized by certain
+demographic covariates, such as age, gender, and vaccination status.
+Some covariates, such as age and Charlson weight, have large effects on
+the probability of needing any or higher levels of care. Yet, no
+variables have a meaningful impact — on the order of around half a day —
+on the rate of . We provide the rate estimates for *Outpatient or worse*
+and *Inpatient or worse* for referece, though under the expectations
+that the rates don’t differ enough to merit inclusion into most models.
+
+\##Data Use
+
+> The tables containing the parameterized distributions, probability of
+> occrurance, and time-to-event estimates (examples below) for COVID-19,
+> Influenza, and RSV are provided in the tables folder. The methods and
+> further discussion of these results will be provided in an upcoming
+> paper (link will be provided here when published). To cite, please…
+
+\##Methods
+
+\##Example Outputs
+
+Below are example outputs for the first event and outcome or worse
+analyses (along with the stratified estimates) for COVID-19.
+
 ## First Event
 
-The “First Event” following a “Starting State” :
+The “First Event” following a “Starting State” for COVID Infections:
 
 <table>
 <thead>
