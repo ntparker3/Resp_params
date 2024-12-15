@@ -17,10 +17,8 @@ prediction models, as well as enable us to answer questions about how
 people infected with respiratory diseases are moving through the
 healthcare system and who is accessing certain types of care.
 
-<img width="862" alt="inclusion_methods" src="https://github.com/user-attachments/assets/8c84d036-5b5b-408d-8ab6-333597b808bb" />
+<img width="861" alt="Healthcare_cascade" src="https://github.com/user-attachments/assets/ad33694f-3446-49c2-9897-a963b2ac7c24" /> The "healthcare utilization cascade."
 
-![The “healthcare utilization
-cascade”.](~/Desktop/Healthcare_cascade.png)
 
 ## Types of analysis
 
@@ -63,7 +61,7 @@ distributions. Using AIC, we compared the models’ performance using
 different distributions to find the best fitting distribution for each
 transition of interest.
 
-![Graphical representation of inclusions critera] <img width="862" alt="inclusion_methods" src="https://github.com/user-attachments/assets/8c84d036-5b5b-408d-8ab6-333597b808bb" />
+<img width="862" alt="inclusion_methods" src="https://github.com/user-attachments/assets/8c84d036-5b5b-408d-8ab6-333597b808bb" /> Graphical representation of inclusions criteria. 
 
 Above shows a figure describing our inclusion criteria for acute
 respiratory infection events. We looked between -7 and +30 days of a
