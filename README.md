@@ -17,7 +17,9 @@ prediction models, as well as enable us to answer questions about how
 people infected with respiratory diseases are moving through the
 healthcare system and who is accessing certain types of care.
 
-<img width="861" alt="Healthcare_cascade" src="https://github.com/user-attachments/assets/ad33694f-3446-49c2-9897-a963b2ac7c24" /> The "healthcare utilization cascade."
+<img width="1465" alt="Screenshot 2024-12-15 at 2 36 31 PM" src="https://github.com/user-attachments/assets/72a42306-1dea-4567-bdbd-9a0c7e556e50" />
+The "healthcare utilization cascade."
+
 
 
 ## Types of analysis
