@@ -17,6 +17,8 @@ prediction models, as well as enable us to answer questions about how
 people infected with respiratory diseases are moving through the
 healthcare system and who is accessing certain types of care.
 
+<img width="862" alt="inclusion_methods" src="https://github.com/user-attachments/assets/8c84d036-5b5b-408d-8ab6-333597b808bb" />
+
 ![The “healthcare utilization
 cascade”.](~/Desktop/Healthcare_cascade.png)
 
