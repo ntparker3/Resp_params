@@ -1,0 +1,126 @@
+---
+title: "Parameterizing healthcare utilization transitions of respiratory pathogens using EHR data"
+header-includes: 
+  \usepackage{fancyhdr}
+  \usepackage{soul}
+  \usepackage{multicol}
+  \usepackage{framed}\renewenvironment{quote}{
+  \colorlet{shadecolor}{orange!15}\begin{snugshade}
+  }{\end{snugshade}}
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(readr)
+library(knitr)
+library(dplyr)
+library(kableExtra)
+library(webshot2)
+```
+
+## Background and motivation
+
+  Knowledge of the transitions between healthcare utilization states, such as virtual care, urgent care, or hospitalization, is important for the effectiveness of prediction models and public health planning strategies. Yet, most of the distributions for such transitions for respiratory diseases remain unknown. Using Kaiser Permanente electric health records, we parameterized time-to-event transition distributions for COVID-19, Influenza, and RSV. This will allow for better informed prediction models, as well as enable us to answer questions about how people infected with respiratory diseases are moving through the healthcare system and who is accessing certain types of care. 
+  
+![The "healthcare utilization cascade".](~/Desktop/Healthcare_cascade.png)
+  
+## Types of analysis
+
+For all three pathogens, we parameterized two types of transitions — the *first event* to occur following a *starting event*, as well as *outcome or more severe* for each outcome from a *starting event*. The first transition type can help answer questions about how people are moving through the healthcare cascade (link presentation or video). The *outcome or more severe* transition type can inform prediction and forecast models by answering how many people will seek at least a certain level of care in the healthcare cascade. 
+
+The *outcome or more severe* analysis was further parameterized by certain demographic covariates, such as age, gender, and vaccination status. Some covariates, such as age and Charlson weight, have large effects on the probability of needing any or higher levels of care. Yet, no variables have a meaningful impact — on the order of around half a day — on the rate of seeking such care. We provide the rate estimates for *Outpatient or worse* and *Inpatient or worse* for reference, though under the expectations that the rates don't differ enough to merit inclusion into most models. 
+
+## Data Use
+
+The tables containing the parameterized distributions, probability of occurence, and time-to-event estimates (examples below) for COVID-19, Influenza, and RSV are provided in the *Parameter_Tables* folder. The methods and further discussion of these results will be provided in an upcoming paper (link will be provided here when published). To cite, please...
+
+## Methods
+
+We used the flexsurv package in R, which allowed us to create parametric competing risks mixture models for each type of analysis. We employed a competing risk mixture model because for each model, there are multiple states that someone can move to, some of which might occur before future events. This package is also useful because it allows for flexibility in distributions. Using AIC, we compared the models’ performance using different distributions to find the best fitting distribution for each transition of interest. 
+
+![Graphical representation of inclusion critera.](~/Desktop/inclusion_methods.png)
+
+Above shows a figure describing our inclusion criteria for acute respiratory infection events. We looked between -7 and +30 days of a positive test to find events. From those events, we looked 60 days out to either the first event, or most severe event. 
+
+This criteria allowed us to restrict ARI healthcare events to being related/caused by COVID infections, while still including healthcare events that might take more than 30 days (like death) after the initial event. 
+
+## Example Outputs
+
+Below are example outputs for the first event and outcome or worse analyses (along with the stratified estimates) for COVID-19. 
+
+## First Event
+
+The "First Event" following a "Starting State" for COVID Infections:
+
+*For example, there is a 36.8% chance that the first event following symptom onset is an urgent care visit. The median time to these urgent care visits is 2.85 days following symptom onset.*
+
+```{r COVID_fe, include = F}
+COVID.first.event <- read_csv("~/Documents/Cal/Lewnard/RespTime/Parameter_Tables/COVID_First_Event.csv")
+```
+
+```{r COVID_fe_ouptut, echo = F}
+
+kable(COVID.first.event, caption = "The first event following every state for COVID-19 infections", col.names = c("Starting State", "First Event", "Distribution", "Parameter 1", "Parameter 2", "Parameter 3", "Total Probability", "Probability at t = 15", "Median Time To Event", "25th% Time", "75th% Time"), align = "c")
+
+```
+
+
+## Outcome or worse
+
+The distribution of progressing to each outcome or more severe state from each starting state:
+
+*For example, there is a 48.3% chance that the of experiencing an urgent care visit or worse event following symptom onset of a COVID-19 infection. The median time to this outcome is 4.04 days following symptom onset.*
+
+```{r COVID_ow, include = F}
+COVID.event.ow <- read_csv("~/Documents/Cal/Lewnard/RespTime/Parameter_Tables/COVID_Event_Orworse.csv")
+```
+
+```{r COVID_ow_ouptut, echo = F}
+
+kable(COVID.event.ow, caption = "Event or more severe following every state for COVID-19 infections", col.names = c("Starting State", "Outcome or worse", "Distribution", "Parameter 1", "Parameter 2", "Parameter 3", "Total Probability", "Probability at t = 15", "Median Time To Event", "25th% Time", "75th% Time"), align = "c")
+
+```
+
+
+## Probabilities stratified by covariates
+
+All of the *Event or more severe state* outcomes were stratified by available demographic variables. Presented here are the probabilities of each outcome stratified by various covariates. 
+
+```{r COVID_covariates, include = F}
+COVID.covariates.ow <- read_csv("~/Documents/Cal/Lewnard/RespTime/Parameter_Tables/COVID_Event_Orworse_covariates.csv")
+```
+
+```{r COVID_covariates_ouptut, echo = F}
+
+kable(COVID.covariates.ow, caption = "Event or more severe following symptom onset for COVID-19 infections by demographic covariates", col.names = c("Characteristic", "Group", "Virtual +", "Outpatient +", "Urgent Care +", "Emergency +", "Inpatient +", "Ventilation +", "Death"), align = "c")
+
+```
+
+
+## Rates stratified by covariates
+
+As discussed, time-to-event rates vary little across demographic groups (usually on the order of half a day). Therefore, only the stratified estimates of the location parameter and median time-to-event for *Outpatient or worse* and *Inpatient or worse* are presented. 
+
+As a reminder, here are the parameters and mean time-to-events for *Outpatient or worse* and *Inpatient or worse* for COVID-19 across all groups. 
+
+```{r COVID_rates, include = F}
+COVID.rates <- read_csv("~/Documents/Cal/Lewnard/RespTime/Parameter_Tables/COVID_Rates_Total.csv")
+```
+
+```{r COVID_rates_output, echo = F}
+
+kable(COVID.rates, caption = "Parameters and median time-to-event across all COVID-19 Infections", align = "c")
+```
+
+And here are the stratified estimates. 
+
+```{r COVID_covariates_rates, include = F}
+COVID.rates.covariates <- read_csv("~/Documents/Cal/Lewnard/RespTime/Parameter_Tables/COVID_Covariate_Rates.csv")
+```
+
+```{r COVID_covariates_rates_ouptut, echo = F}
+
+kable(COVID.rates.covariates, caption = "Location parameter and median time-to-event stratified by demographic covariates for COVID-19", align = "c")
+
+```
