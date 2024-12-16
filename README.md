@@ -64,6 +64,7 @@ different distributions to find the best fitting distribution for each
 transition of interest.
 
 <img width="862" alt="inclusion_methods" src="https://github.com/user-attachments/assets/8c84d036-5b5b-408d-8ab6-333597b808bb" /> 
+
 Graphical representation of inclusions criteria. 
 
 Above shows a figure describing our inclusion criteria for acute
