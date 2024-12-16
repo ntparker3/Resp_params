@@ -10,7 +10,7 @@ Knowledge of the transitions between healthcare utilization states, such
 as virtual care, urgent care, or hospitalization, is important for the
 effectiveness of prediction models and public health planning
 strategies. Yet, most of the distributions for such transitions for
-respiratory diseases remain unknown. Using Kaiser Permanente electric
+respiratory diseases remain unknown. Using Kaiser Permanente electronic
 health records, we parameterized time-to-event transition distributions
 for COVID-19, Influenza, and RSV. This will allow for better informed
 prediction models, as well as enable us to answer questions about how
@@ -56,7 +56,7 @@ please…
 
 We used the flexsurv package in R, which allowed us to create parametric
 competing risks mixture models for each type of analysis. We employed a
-competing risk mixture model because for each model, there are multiple
+competing risk mixture model because, for each model, there are multiple
 states that someone can move to, some of which might occur before future
 events. This package is also useful because it allows for flexibility in
 distributions. Using AIC, we compared the models’ performance using
