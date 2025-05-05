@@ -1,0 +1,34 @@
+﻿Starting State,First Event,Distribution,Parameter 1,Parameter 2,Parameter 3,Total Probability,Median Time-to-event,25th Percentile Time,75th Percentile Time
+Symptom Onset,Virtual,Log normal,logmean = 1.11,logsd = 0.786,,"10.7 (10.5, 10.9)","3.03 (2.96, 3.09)","1.78 (1.74, 1.83)","5.14 (5.03, 5.37)"
+Symptom Onset,Outpatient,Log normal,logmean = 1.29,logsd = 0.793, ,"7.2 (7.1, 7.4)","3.64 (3.56, 3.72)","2.13 (2.08, 2.18)","6.21 (6.07, 6.37)"
+Symptom Onset,Urgent Care,Log normal,logmean = 1.12,logsd = 0.746,,"18.6 (18.3, 18.9)","3.06 (3.00, 3.12)","1.85 (1.81, 1.89)","5.06 (4.94, 5.18)"
+Symptom Onset,Emergency,Log normal,logmean = 1.26,logsd = 0.824,,"17.9 (17.6, 18.2)","3.52 (3.44, 3.60)","2.02 (1.97, 2.06)","6.13 (5.99, 6.28)"
+Symptom Onset,Inpatient,Weibull,shape = 1.48,scale = 6.89,,"4.7 (4.6, 4.8)","5.39 (5.26, 5.51)","2.98 (2.90, 3.05)","8.59 (8.41, 8.78)"
+Symptom Onset,Recovered,,,,,"41.0 (40.7, 41.2)",– –,– –,– –
+Positive Test,Virtual,Log normal,logmean = -0.701,logsd = 1.66,,"13.8 (13.6, 13.9)","0.50 (0.49, 0.50)",<0.2,"1.52 (1.49, 1.55)"
+Positive Test,Outpatient,Log normal,logmean = -2.14,logsd = 1.49,,"7.2 (7.1, 7.2)",<0.2,<0.2,"0.53 (0.52, 0.54)"
+Positive Test,Urgent Care,Log normal,logmean = -2.01,logsd = 0.761,,"17.9 (17.7, 18.1)",<0.2,<0.2,<0.2
+Positive Test,Emergency,Log normal,logmean = -2.17,logsd = 0.654,,"19.6 (19.4, 19.8)",<0.2,<0.2,<0.2
+Positive Test,Inpatient,Generalized gamma,mu = -2.15,sigma = 0.785,Q = 0,"4.6 (4.6, 4.7)",<0.2,<0.2,<0.2
+Positive Test,Recovered,,,,,"36.9 (36.8, 37.1)",– –,– –,– –
+Virtual,Outpatient,Gamma,shape = 0.585,rate = 0.107,,"7.2 (7.0, 7.3)","2.83 (2.69, 2.96)","0.76 (0.70, 0.82)","7.40 (7.12, 7.68)"
+Virtual,Urgent Care,Log normal,logmean = -0.817,logsd = 1.88,,"5.0 (4.8, 5.1)","0.92 (0.90, 0.94)","0.26 (0.25, 0.27)","3.28 (3.15, 3.40)"
+Virtual,Emergency,Log normal,logmean = -0.28,logsd = 1.73,,"7.1 (6.9, 7.3)","0.76 (0.74, 0.77)","0.24 (0.23, 0.24)","2.43 (2.34, 2.52)"
+Virtual,Inpatient,Gamma,shape = 0.600,rate = 0.156,,"1.9 (1.9, 2.0)","2.02 (1.93, 2.12)","0.56 (0.52, 0.60)","5.22 (5.02, 5.40)"
+Virtual,Recovered,,,,,"78.9 (78.6, 79.1)",– –,– –,– –
+Outpatient,Urgent Care,Log normal,logmean = -1.18,logsd = 1.72,,"9.6 (9.5, 9.8)",<0.2,<0.2,"0.38 (0.36, 0.39)"
+Outpatient,Emergency,Weibull,shape = 0.681,scale = 2.00,,"7.3 (7.2, 7.4)","0.89 (0.77, 1.03)","0.25 (0.21, 0.29)","3.23 (2.80, 3.82)"
+Outpatient,Inpatient,Weibull,shape = 0.581,scale = 1.50,,"4.0 (4.0, 4.1)","0.86 (0.71, 1.08)","0.23 (0.18, 0.28)","3.27 (2.62, 4.01)"
+Outpatient,Recovered,,,,,"79.0 (78.9, 79.2)",– –,– –,– –
+Urgent Care,Emergency,Log normal,logmean = -0.271,logsd = 1.79,,"6.7 (6.6, 6.8)","0.76 (0.75, 0.78)","0.23 (0.22, 0.23)","2.55 (2.48, 2.62)"
+Urgent Care,Inpatient,Generalized gamma,mu = -0.860,sigma = 1.79,Q = 0,"1.7 (1.7, 1.7)","0.42 (0.34, 0.54)",<0.2,"1.42 (1.12, 1.82)"
+Urgent Care,Recovered,,,,,"91.6 (91.5, 91.7)",– –,– –,– –
+Emergency,Inpatient,Log normal,logmean = -0.372,logsd = 1.83,,"7.5 (7.4, 7.6)","0.69 (0.68, 0.70)",<0.2,"2.37 (2.31, 2.44)"
+Emergency,Ventilation,Gompertz,shape = 1.18,rate = 0.218,,"0.1 (0.0, 0.1)","1.32 (0.55, 1.76)","0.80 (0.24, 1.31)","1.81 (1.08, 2.39)"
+Emergency,Death,Gamma,shape = 0.712,rate = 0.105,,"0.5 (0.4, 0.6)","3.99 (2.88, 5.44)","1.29 (0.70, 2.02)","9.33 (7.09, 12.07)"
+Emergency,Recovered,,,,,"91.9 (91.7, 92.1)",– –,– –,– –
+Inpatient,Ventilation,Gamma,shape = 0.649,rate = 0.136,,"5.1 (5.0, 5.2)","2.64 (2.51, 2.77)","0.79 (0.68, 0.89)","6.50 (5.94, 7.09)"
+Inpatient,Death,Generalized gamma,mu = 2.90,sigma = 0.108,Q = 8.62,"6.5 (6.3, 6.6)","10.03 (9.85, 13.10)","5.26 (5.13, 8.80)","14.64 (14.37, 16.75)"
+Inpatient,Recovered,,,,,"88.4 (88.2, 88.6)",– –,– –,– –
+Ventilation,Death,Gamma,shape = 0.602,rate = 0.110,,"40.7 (40.1, 41.4)","2.89 (2.73, 3.02)","0.80 (0.64, 0.94)","7.44 (6.55, 8.37)"
+Ventilation,Recovered,,,,,"59.3 (58.6, 59.9)",– –,– –,– –
